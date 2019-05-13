@@ -3,7 +3,9 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>ご飯は美味しい店に行こう！</h1>
-        <a href="" class="btn btn-success btn-lg">無料会員登録</a>
+        <% unless logged_in? %>
+          <%= link_to 'TABESHOPを始める', signup_path, class: 'btn btn-success btn-lg' %>
+        <% end %>
       </div>
     </div>
   </div>
