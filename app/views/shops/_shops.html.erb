@@ -2,14 +2,20 @@
   <% shops.each do |shop| %>
     <li class="media">
       <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(micropost.user, options = { size: 50 }) %>" alt="">
+        #画像
       </div>
       <div class="media-body">
         <div>
-          <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">posted at <%= micropost.created_at %></span>
+          <%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">営業時間 <%= shop.starttime %>~<%= shop.finishtime %></span>
         </div>
         <div>
-          <p><%= micropost.content %></p>
+          <p>説明：<%= shop.content %></p>
+        </div>
+        <div>
+          <p>予算：<%= shop.charge %></p>
+        </div>
+        <div>
+          <p>場所：<%= shop.place %></p>
         </div>
         <div>
           <% if current_user == micropost.user %>
