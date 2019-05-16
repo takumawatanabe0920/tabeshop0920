@@ -43,3 +43,14 @@ footer {
   font-weight: bold;
   letter-spacing: 0.15em;
 }
+
+.article-box {
+  display: block;
+  margin-bottom: 30px;
+}
+.article-box:nth-of-type(odd){
+  float: left;
+}
+.article-box:nth-of-type(even){
+  float: right;
+}
