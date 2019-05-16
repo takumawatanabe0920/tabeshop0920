@@ -1,4 +1,7 @@
 class ShopsController < ApplicationController
+  def show
+    @shop = current_user.shops.find(params[:id])
+  end
 
   def new
     @shop = current_user.shops.build
@@ -10,11 +13,17 @@ class ShopsController < ApplicationController
 
     if @shop.save
       flash[:success] = "登録しました"
-      redirect_to root_url
+      redirect_to @shop
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
     end
+  end
+
+  def destroy
+    @shop.destroy
+    flash[:success] = '投稿を削除しました。'
+    redirect_to root_url
   end
 
   def update
