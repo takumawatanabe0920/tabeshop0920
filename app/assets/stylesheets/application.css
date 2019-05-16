@@ -1,9 +1,20 @@
 @charset "utf-8";
 
+html {
+  font-size: 62.5%;
+}
 /* body */
 body {
-  background: #f2f2f2;
+  color: #333
+  font-size: 1.2rem;
 }
+*,*::before, *::after {
+  box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
 footer {
   margin-top: 40px;
 }
@@ -44,13 +55,28 @@ footer {
   letter-spacing: 0.15em;
 }
 
-.article-box {
-  display: block;
-  margin-bottom: 30px;
+.item .panel-body {
+  height: 70px;
 }
-.article-box:nth-of-type(odd){
-  float: left;
+.item .panel-heading {
+  height: 250px;
 }
-.article-box:nth-of-type(even){
-  float: right;
+.item .panel-heading img {
+  height: 100%;
+  max-width: 100%;
+}
+p.shopname {
+  /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
+  font-size: 2.1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.text-muted {
+  font-size: 1.2rem;
+}
+p.desc {
+  margin: 0 0 10px 30px;
 }

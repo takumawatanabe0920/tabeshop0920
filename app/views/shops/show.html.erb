@@ -1,5 +1,10 @@
 <div class="user-profile">
-  
+  <div>
+   <p>
+    <strong>Picture:</strong>
+    <%= image_tag(@shop.picture_url) if @shop.picture.present? %>
+   </p>
+  </div>
   <div class="name text-center">
     <div>
       <p><%= @shop.shopname %> <span class="text-muted">営業時間 <%= @shop.starttime %>~<%= @shop.finishtime %></span></p>

@@ -13,7 +13,7 @@ class ShopsController < ApplicationController
 
     if @shop.save
       flash[:success] = "登録しました"
-      redirect_to @shop
+      redirect_to root_url
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
@@ -35,6 +35,6 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:shopname, :content, :starttime, :finishtime, :charge, :place)
+    params.require(:shop).permit(:shopname, :content, :starttime, :finishtime, :charge, :place, :picture)
   end
 end

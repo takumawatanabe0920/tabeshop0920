@@ -1,21 +1,18 @@
-<ul class="media-list">
+<div class="row">
   <% shops.each do |shop| %>
-    <li class="media">
-      <div class="media-left">
-        #画像
-      </div>
-      <div class="media-body">
-        <div>
-          <%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">営業時間： <%= shop.starttime %>~<%= shop.finishtime %></span>
+   <div class="item">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <img src="#" alt="" >
         </div>
-        <div>
-          <p>説明：<%= shop.content %></p>
+        <div class="panel-body">
+          <p class="shopname"><%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">( <%= shop.starttime %>:00 ~ <%= shop.finishtime %>:00 )</span></p>
         </div>
-        <div>
-          <p>予算：<%= shop.charge %></p>
-        </div>
-        <div>
-          <p>場所：<%= shop.place %></p>
+        <div class="shopinfo">
+          <p class="desc"><%= shop.place %></p>
+          <p class="desc"><%= shop.category %></p>
+          <p class="desc"><%= shop.charge %></p>
         </div>
         <div>
           <% if current_user == shop.user %>
@@ -23,7 +20,8 @@
           <% end %>
         </div>
       </div>
-    </li>
+    </div>
+   </div>
   <% end %>
   <%= paginate shops %>
-</ul>
+</div>
