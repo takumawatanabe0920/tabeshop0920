@@ -1,9 +1,17 @@
 <div class="row">
   <aside class="col-md-8">
     <%= form_for(@shop) do |f| %>
-    <div class="form-group">
+    <% @shop.errors.full_messages.each do |message| %>
+     <%= message %>
+    <% end %>
+      <div class="form-group">
         <%= f.label :shopname, "店名" %>
         <%= f.text_field :shopname, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category, "ジャンル" %>
+        <%= f.text_field :category, class: 'form-control' %>
       </div>
 
       <div class="form-group">
