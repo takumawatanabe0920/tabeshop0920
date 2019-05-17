@@ -1,25 +1,24 @@
-<div class="user-profile">
-  <div>
-   <p>
-    <strong>Picture:</strong>
-    <%= image_tag(@shop.picture_url) if @shop.picture.present? %>
-   </p>
-  </div>
-  <div class="name text-center">
-    <div>
-      <p><%= @shop.shopname %> <span class="text-muted">営業時間 <%= @shop.starttime %>~<%= @shop.finishtime %></span></p>
+ <div class="row">
+   <div class="shop">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <%= image_tag(@shop.picture_url) if @shop.picture.present? %>
+        </div>
+        <div class="mannaka">
+         <div class="panel-body">
+          <p class="shopname"><%= link_to @shop.shopname, shop_path(@shop) %> <span class="text-muted">( <%= @shop.starttime %>:00 ~ <%= @shop.finishtime %>:00 ) 場所:<%= @shop.place %>  ジャンル:<%= @shop.category %>  予算:<%= @shop.charge %>円 </span></p>
+         </div>
+         <div class="shopinfo">
+          <p class="desc"><%= @shop.content %></p>
+         </div>
+        <div>
+          <% if current_user == @shop.user %>
+            <%= link_to "Delete", @shop, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+          <% end %>
+         </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>説明：<%= @shop.content %></p>
-    </div>
-    <div>
-      <p>予算：<%= @shop.charge %></p>
-    </div>
-    <div>
-      <p>場所：<%= @shop.place %></p>
-    </div>
-    <div>
-      <p>ジャンル：<%= @shop.category %></p>
-    </div>
-  </div>
-</div>
+   </div>
+ </div>

@@ -1,8 +1,8 @@
-<div class="container">
-　<div class="row">
+<% if shops.present? %>
+ <div class="row">
   <% shops.each do |shop| %>
    <div class="item">
-    <div class="col-md-6 col-sm-6 col-xs-6　">
+    <div class="col-md-4 col-xs-6">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
           <%= image_tag(shop.picture_url) if shop.picture.present? %>
@@ -26,4 +26,4 @@
   <% end %>
   <%= paginate shops %>
 </div>
-</div>
+<% end %>

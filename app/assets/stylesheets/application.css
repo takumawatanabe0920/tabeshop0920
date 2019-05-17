@@ -80,3 +80,27 @@ p.shopname {
 p.desc {
   margin: 0 0 10px 30px;
 }
+
+.shop .panel-body {
+  height: 70px;
+}
+.shop .panel-heading {
+  height: 350px;
+}
+.shop .panel-heading img {
+  height: 100%;
+  max-width: 100%;
+}
+.shop .shopname {
+  /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
+  font-size: 3.1rem;
+
+}
+
+.mannaka {
+  margin: -10px 0 10px 30px;
+}
+
+.shop .text-muted {
+  font-size: 1.5rem;
+}
