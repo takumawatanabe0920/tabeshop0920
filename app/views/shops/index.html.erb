@@ -1,0 +1,27 @@
+<% content_for :cover do %>
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="cover-contents">
+        <h1>ご飯は美味しい店に行こう！</h1>
+        <% if logged_in? %>
+         <%= search_form_for(@q) do |f| %>
+          <div class="form-group">
+           <div class="row">
+            <div class="col-sm-10">
+             <form id="form02">
+              <%= f.search_field :shopname_cont, id: "input02", class: "form-control", placeholder: "キーワード【店名】【ジャンル 例:焼肉など】" %>
+              <%= f.submit "検索", id: "submit02" %>
+             </form>
+            </div>
+           </div>
+          </div>
+         <% end %>
+        <% else %>
+          <%= link_to 'TABESHOPを始める', signup_path, class: 'btn btn-success btn-lg' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'shops/shops', shops: @shops %>

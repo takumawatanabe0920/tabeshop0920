@@ -104,3 +104,29 @@ p.desc {
 .shop .text-muted {
   font-size: 1.5rem;
 }
+
+#form02{
+    background-color: white;
+    border: 1px green solid;
+}
+#form02 input{
+    vertical-align: top;
+    margin: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+#form02{
+    border-radius: 10px;
+}
+#input02{
+    border: none;
+    padding-left: 20px;
+}
+#submit02{
+    border: none;
+    background-image: url(画像へのパス);
+    background-position: center;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+}

@@ -1,5 +1,9 @@
 class ShopsController < ApplicationController
   before_action :correct_user, only: [:destroy]
+  def index
+    @q = current_user.shops.ransack(params[:q])
+    @shops = @q.result(distinct: true).recent.page(params[:page])
+  end
 
   def show
     @shop = current_user.shops.find(params[:id])

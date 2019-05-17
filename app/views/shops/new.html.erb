@@ -10,33 +10,37 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :category, "ジャンル" %>
-        <%= f.text_field :category, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
         <%= f.label :content, '説明' %>
         <%= f.text_area :content, class: 'form-control', rows: 5 %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :charge, '予算' %>
-        <%= f.number_field :charge, class: 'form-control' %>
-      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :category, "ジャンル" %>
+            <%= f.text_field :category, class: 'form-control' %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :starttime, '開始時間' %>
-        <%= f.number_field :starttime, class: 'form-control' %>
-      </div>
+          <div class="form-group">
+            <%= f.label :charge, '予算' %>
+            <%= f.number_field :charge, class: 'form-control' %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :finishtime, '終了時間' %>
-        <%= f.number_field :finishtime, class: 'form-control' %>
-      </div>
+          <div class="form-group">
+            <%= f.label :starttime, '開始時間' %>
+            <%= f.time_field :starttime, step: "3600" %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :place, '場所' %>
-        <%= f.text_field :place, class: 'form-control' %>
+          <div class="form-group">
+            <%= f.label :finishtime, '終了時間' %>
+            <%= f.time_field :finishtime, step: "3600" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :place, '場所' %>
+            <%= f.text_field :place, class: 'form-control' %>
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
@@ -44,5 +48,5 @@
         <%= f.file_field :picture, id: :shop_picture %>
       </div>
 
-      <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'Post', class: 'btn btn-primary btn-inline' %>
     <% end %>
