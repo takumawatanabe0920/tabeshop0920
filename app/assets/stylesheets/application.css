@@ -106,8 +106,10 @@ p.desc {
 }
 
 #form02{
+    block: inline;
     background-color: white;
     border: 1px green solid;
+    cursor: pointer;
 }
 #form02 input{
     vertical-align: top;
@@ -117,7 +119,7 @@ p.desc {
     background-color: transparent;
 }
 #form02{
-    border-radius: 10px;
+    border-radius: 20px;
 }
 #input02{
     border: none;
@@ -129,4 +131,9 @@ p.desc {
     background-position: center;
     background-size: auto 90%;
     background-repeat: no-repeat;
+}
+
+.tabeform {
+  margin-right: -30px;
+
 }

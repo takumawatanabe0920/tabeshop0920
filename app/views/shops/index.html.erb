@@ -7,11 +7,21 @@
          <%= search_form_for(@q) do |f| %>
           <div class="form-group">
            <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-12">
              <form id="form02">
-              <%= f.search_field :shopname_cont, id: "input02", class: "form-control", placeholder: "キーワード【店名】【ジャンル 例:焼肉など】" %>
-              <%= f.submit "検索", id: "submit02" %>
+                <div class="col-sm-4 tabeform">
+                  <%= f.search_field :shopname_cont, id: "input02", class: "form-control", placeholder: "【店名】" %>
+                </div>
+                <div class="col-sm-4 tabeform">
+                  <%= f.search_field :category_cont, id: "input02", class: "form-control", placeholder: "【ジャンル 例:焼肉】" %>
+                </div>
+                <div class="col-sm-4 tabeform">
+                  <%= f.search_field :place_cont, id: "input02", class: "form-control", placeholder: "【場所 例:新宿】" %>
+                </div>
+                <%= f.submit "検索", id: "submit02" %>
+
              </form>
+
             </div>
            </div>
           </div>
