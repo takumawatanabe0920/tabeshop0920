@@ -8,4 +8,9 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :shops
+  has_many :favorites, dependent: :destroy
+  has_many :likes, through: :favorites, source: :like
+
+
+
 end

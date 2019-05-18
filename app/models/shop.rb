@@ -8,4 +8,7 @@ class Shop < ApplicationRecord
   belongs_to :user
 
   scope :recent, -> { order(created_at: :desc)}
+
+  has_many :favorites, foreign_key: "like_id", dependent: :destroy
+  has_many :shops, through: :favorites, source: :user
 end

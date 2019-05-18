@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_061304) do
+ActiveRecord::Schema.define(version: 2019_05_17_080054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "like_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["like_id"], name: "index_favorites_on_like_id"
+    t.index ["user_id", "like_id"], name: "index_favorites_on_user_id_and_like_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "shopname"
@@ -38,5 +48,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_061304) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "favorites", "shops", column: "like_id"
+  add_foreign_key "favorites", "users"
   add_foreign_key "shops", "users"
 end

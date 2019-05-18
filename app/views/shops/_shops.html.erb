@@ -9,6 +9,7 @@
         </div>
         <div class="panel-body">
           <p class="shopname"><%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">( <%= shop.starttime %>:00 ~ <%= shop.finishtime %>:00 )</span></p>
+          
         </div>
         <div class="shopinfo">
           <p class="desc"><%= shop.place %></p>
@@ -17,6 +18,7 @@
         </div>
         <div>
           <% if current_user == shop.user %>
+
             <%= link_to "Delete", shop, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
         </div>
