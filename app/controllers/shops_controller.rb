@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in
   def index
     @q = current_user.shops.ransack(params[:q])
     @shops = @q.result(distinct: true).recent.page(params[:page])
