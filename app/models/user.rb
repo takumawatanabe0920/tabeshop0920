@@ -12,5 +12,6 @@ class User < ApplicationRecord
   has_many :likes, through: :favorites, source: :like
 
 
+  
 
 end

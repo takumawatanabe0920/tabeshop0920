@@ -66,3 +66,6 @@ gem "kaminari"
 gem 'carrierwave'
 
 gem 'ransack'
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
