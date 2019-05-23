@@ -1,6 +1,3 @@
-// Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
-
 @charset "utf-8";
 
 html {
@@ -9,7 +6,7 @@ html {
 /* body */
 body {
   color: #333
-  
+
 }
 *,*::before, *::after {
   box-sizing: border-box;
@@ -18,8 +15,24 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+.wrapper {
+  margin: 30px auto 40px;
+  display: flex;
+}
+
+.main {
+  display: block;
+  float: left;
+  width: 100%;
+
+}
+
+
+
 footer {
   margin-top: 40px;
+  width: 100%;
+
 }
 
 /* navbar */
@@ -68,6 +81,28 @@ footer {
   height: 100%;
   max-width: 100%;
 }
+
+.sidemenu-panel .panel-heading {
+  height: 40px
+}
+
+.sidemenu-panel .panel-body {
+  max-height: 250px;
+}
+
+.sidemenu-panel .panel-body .starttime {
+  max-height: 250px;
+}
+
+.starttime-kensaku {
+  display: inline-block;
+}
+
+.finishtime-kensaku {
+  display: inline-block;
+}
+
+
 p.shopname {
   /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
   font-size: 2.1rem;
@@ -136,7 +171,40 @@ p.desc {
     background-repeat: no-repeat;
 }
 
+#submit03{
+    width: 80%;
+    margin: -10px 25px 5px 25px;
+
+
+}
+
 .tabeform {
   margin-right: -30px;
+}
 
+.resetbutton {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  margin-top: -0.5em;
+  line-height: 1;
+  font-size: 1.5rem
+
+
+}
+
+.resetbutton  a {
+  color:#333;
+}
+
+p .shopname-checkbox {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.downstarttime {
+  overflow: scroll;
 }

@@ -17,9 +17,13 @@
                 </div>
                 <div class="col-sm-4 tabeform">
                   <%= f.search_field :place_cont, id: "input02", class: "form-control", placeholder: "【場所 例:新宿】" %>
+                  <div class="resetbutton">
+                    <%= link_to request.path do%>
+                     <span class="glyphicon glyphicon-remove-sign"></span>
+                    <% end %>
+                  </div>
                 </div>
                 <%= f.submit "検索", id: "submit02" %>
-
              </form>
 
             </div>
@@ -34,4 +38,15 @@
   </div>
 <% end %>
 
-<%= render 'shops/shops', shops: @shops %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "layouts/sidemenu" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= render 'shops/shops', shops: @shops %>
+    </div>
+  </div>
+</div>

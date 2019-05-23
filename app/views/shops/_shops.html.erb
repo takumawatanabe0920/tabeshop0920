@@ -2,14 +2,14 @@
  <div class="row">
   <% shops.each do |shop| %>
    <div class="item">
-    <div class="col-md-4 col-xs-6">
+    <div class="col-md-6 col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
           <%= image_tag(shop.picture_url) if shop.picture.present? %>
         </div>
         <div class="panel-body">
           <p class="shopname"><%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">( <%= shop.starttime %>:00 ~ <%= shop.finishtime %>:00 )</span></p>
-          
+
         </div>
         <div class="shopinfo">
           <p class="desc"><%= shop.place %></p>
@@ -23,7 +23,6 @@
           <% end %>
         </div>
       </div>
-    </div>
    </div>
   <% end %>
   <%= paginate shops %>
