@@ -17,7 +17,12 @@ a:link, a:visited, a:hover, a:active {
 
 .wrapper {
   margin: 30px auto 40px;
-  display: flex;
+
+  flex-flow: row nowrap;
+}
+
+.lay {
+  display: block;
 }
 
 .main {
@@ -91,7 +96,9 @@ footer {
 }
 
 .sidemenu-panel .panel-body .starttime {
-  max-height: 250px;
+  max-height: 500px;
+  overflow: scroll;
+
 }
 
 .starttime-kensaku {
