@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  mount_uploader :picture, PictureUploader
+  mount_uploader :image, ImageUploader
   validates :shopname, presence: true, length: { maximum: 50 }
   validates :category, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 500 }

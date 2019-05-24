@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :correct_user, only: [:destroy]
-  before_action :require_user_logged_in
+  before_action :authenticate_user!
   def index
     params[:q] = { starttime_eq: 1 }       if params[:starttime] == 1
     params[:q] = { starttime_lteq: 6 }  if params[:starttime] == 2
@@ -50,7 +50,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:shopname, :content, :starttime, :finishtime, :charge, :place, :category, :picture)
+    params.require(:shop).permit(:shopname, :content, :starttime, :finishtime, :charge, :place, :category, :image)
   end
 
   def correct_user

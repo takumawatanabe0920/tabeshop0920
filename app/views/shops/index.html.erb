@@ -3,7 +3,7 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>ご飯は美味しい店に行こう！</h1>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
          <%= search_form_for(@q) do |f| %>
           <div class="form-group">
            <div class="row">
@@ -31,7 +31,7 @@
           </div>
          <% end %>
         <% else %>
-          <%= link_to 'TABESHOPを始める', signup_path, class: 'btn btn-success btn-lg' %>
+          <%= link_to 'TABESHOPを始める', new_user_registration_path, class: 'btn btn-success btn-lg' %>
         <% end %>
       </div>
     </div>
