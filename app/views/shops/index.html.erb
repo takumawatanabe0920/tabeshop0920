@@ -41,7 +41,7 @@
 <div class="wrapper">
    <div class="row">
      <div class="col-md-3">
-       <%= render "layouts/sidemenu" %>
+       <%= render "layouts/sidemenu", shops: @shops %>
      </div>
      <div class="col-md-9">
        <%= render 'shops/shops', shops: @shops %>

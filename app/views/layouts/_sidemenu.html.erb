@@ -61,15 +61,7 @@
          <%= f.time_field :finishtime_lteq %>
        </div>
      </div>
-     <div class="panel-heading">
-       その他の検索
-     </div>
-     <div class="panel-body">
-     <p class="shopname-checkbox">
-       <%=  f.label :shops_id_in, '店名' %>
-       <%=  f.collection_check_boxes :shops_id_in, @shops, :id, :shopname %>
-     </p>
-     </div>
+     
      <div class="panel-heading">
        エリア検索
      </div>

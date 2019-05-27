@@ -1,5 +1,4 @@
 class ShopsController < ApplicationController
-  before_action :correct_user, only: [:destroy]
   before_action :authenticate_user!
   def index
     params[:q] = { starttime_eq: 1 }       if params[:starttime] == 1
@@ -11,14 +10,12 @@ class ShopsController < ApplicationController
     @shop = current_user.shops.all
   end
 
-
   def show
     @shop = current_user.shops.find(params[:id])
   end
 
   def new
     @shop = current_user.shops.build
-    @shops = current_user.shops.recent.page(params[:page])
   end
 
   def create
@@ -33,30 +30,15 @@ class ShopsController < ApplicationController
     end
   end
 
-  def update
-  end
-
-  def edit
-  end
-
   def destroy
     @shop.destroy
     flash[:success] = '投稿を削除しました。'
     redirect_back(fallback_location: root_path)
   end
 
-
-
   private
 
   def shop_params
-    params.require(:shop).permit(:shopname, :content, :starttime, :finishtime, :charge, :place, :category, :image)
-  end
-
-  def correct_user
-    @shop = current_user.shops.find_by(id: params[:id])
-    unless @shop
-      redirect_to root_url
-    end
+    params.require(:shop).permit(:shopname, :category, :charge, :content, :place, :image, :finishtime, :starttime)
   end
 end
