@@ -34,10 +34,14 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                 <%= link_to "マイページ", user_path(current_user) %>
+                 <%= link_to 'マイページ', user_path(current_user)%>
                 </li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                <% if current_user.present? %>
+                  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                <% elsif current_admin.present? %>
+                  <li><%= link_to 'ログアウト（管理者）', destroy_admin_session_path, method: :delete %></li>
+                <% end %>
               </ul>
             </li>
           <% else %>

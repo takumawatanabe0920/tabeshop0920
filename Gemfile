@@ -50,6 +50,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -72,3 +73,5 @@ gem 'ransack'
 gem "jquery-rails"
 
 gem "devise"
+
+gem 'rails-i18n'

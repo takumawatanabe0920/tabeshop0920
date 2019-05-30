@@ -7,6 +7,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.integer :charge
       t.string :category
       t.references :admin, index: true, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

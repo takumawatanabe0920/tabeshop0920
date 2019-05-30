@@ -44,12 +44,14 @@ ActiveRecord::Schema.define(version: 2019_05_27_061547) do
     t.integer "charge"
     t.string "category"
     t.bigint "admin_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "finishtime"
     t.string "starttime"
     t.string "image"
     t.index ["admin_id"], name: "index_shops_on_admin_id"
+    t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +76,5 @@ ActiveRecord::Schema.define(version: 2019_05_27_061547) do
   add_foreign_key "favorites", "shops", column: "like_id"
   add_foreign_key "favorites", "users"
   add_foreign_key "shops", "admins"
+  add_foreign_key "shops", "users"
 end

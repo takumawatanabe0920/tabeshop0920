@@ -54,8 +54,8 @@ footer {
   margin-top: -20px;
   margin-bottom: 20px;
   width: 100%;
-  height: 400px;
-  background: url("/images/cover.gggg.jpg") center center no-repeat;
+  height: 500px;
+  background: url("/images/tabe.jpg") center center no-repeat;
   background-size: cover;
 }
 .cover .cover-inner {
@@ -151,14 +151,13 @@ p.desc {
 }
 
 #form02{
-    block: inline;
-    background-color: white;
-    border: 1px green solid;
-    cursor: pointer;
+  position:relative;/*フォームの相対位置*/
+  width:800px;/*フォームのサイズ*/
+  margin-bottom:15px;/*フォームの下に余白*/
+  cursor: pointer;
 }
 #form02 input{
     vertical-align: top;
-    margin: 0px;
     height: 100%;
     box-sizing: border-box;
     background-color: transparent;
@@ -168,15 +167,24 @@ p.desc {
 }
 #input02{
     border: none;
-    padding-left: 20px;
+    width: 110%;
+    height: 100%;
+
 }
 #submit02{
-    border: none;
-    background-image: url(画像へのパス);
-    background-position: center;
-    background-size: auto 90%;
-    background-repeat: no-repeat;
+width:70px;/*検索ボタンの横幅*/
+height:50px;/*検索ボタンの縦幅*/
+position:absolute;/*検索ボタンの絶対位置*/
+left:500px;/*検索ボタンの位置調整*/
+top:0;
+border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/
+background:#7fbfff;/*検索ボタンの背景カラー*/
+border:none;/*検索ボタンの枠線を消す*/
+color:#fff;/*検索ボタンのテキストカラー*/
+font-weight:bold;/*検索ボタンのテキスト太字*/
+font-size:16px;/*検索ボタンのフォントサイズ*/
 }
+
 
 #submit03{
     width: 80%;
@@ -186,7 +194,18 @@ p.desc {
 }
 
 .tabeform {
-  margin-right: -30px;
+  left:-40px;
+  top:0;
+  outline:0;/*クリック時の青い枠線消す*/
+  height:50px;/*検索ボックスの高さ*/
+  padding:0 0px;/*テキスト位置調整*/
+  border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/
+  border: 1px solid #CCCC99;
+  background:#eee;/*検索ボックスの背景カラー*/
+}
+
+.tabeform :hover{
+background-color:#FFCC99;/*検索ボタンマウスオーバー時のフォントカラー*/
 }
 
 .resetbutton {
@@ -199,12 +218,13 @@ p.desc {
   margin-top: -0.5em;
   line-height: 1;
   font-size: 1.5rem
-
-
 }
 
 .resetbutton  a {
   color:#333;
+}
+.resetbutton :hover {
+  background-color:#FFFFFF;
 }
 
 p .shopname-checkbox {
