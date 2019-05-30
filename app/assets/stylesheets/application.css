@@ -212,6 +212,15 @@ p .shopname-checkbox {
   margin-right: 3px;
 }
 
+.star-button {
+  display: inline-block;
+  margin: auto;
+}
+
 .downstarttime {
   overflow: scroll;
+}
+
+.star-icon {
+  color: #f1b400;
 }

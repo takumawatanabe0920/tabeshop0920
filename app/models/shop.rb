@@ -9,5 +9,6 @@ class Shop < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc)}
   belongs_to :user
-  
+  has_many :favorites
+
 end
