@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
   }
 
+  devise_for :admins
+
   resources :users, only: [:show] do
     member do
       get :likes
@@ -14,12 +16,13 @@ Rails.application.routes.draw do
 
   root to: 'shops#index'
 
-  namespace :admin do
-    root "shops#index"
-  end
-
-  resources :shops
+  resources :shops, only: [:index, :show]
 
   get 'likes/like', to: 'likes#like'
+
+  namespace :admins do
+   root to: "dashboards#index"
+   resources :shops, only: [:new, :create, :destroy]
+  end
 
 end

@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :likes, through: :favorites, source: :like
 
+
+
   def like(shop)
     self.favorites.find_or_create_by(like_id: shop.id)
   end

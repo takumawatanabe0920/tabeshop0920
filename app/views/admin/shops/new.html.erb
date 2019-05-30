@@ -1,6 +1,6 @@
 <div class="row">
   <aside class="col-md-8">
-    <%= form_for (@shop) do |f| %>
+    <%= simple_form_for [:admins, @shop] do |f| %>
     <% @shop.errors.full_messages.each do |message| %>
      <%= message %>
     <% end %>
