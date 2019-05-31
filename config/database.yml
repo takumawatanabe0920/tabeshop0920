@@ -79,9 +79,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+   <<: *default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: tabeshop_production
-  username: tabeshop
-  password: <%= ENV['TABESHOP_DATABASE_PASSWORD'] %>
