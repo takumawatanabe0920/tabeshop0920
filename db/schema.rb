@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_012633) do
     t.integer "charge"
     t.string "category"
     t.bigint "admin_id", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "finishtime"

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   root to: 'shops#index'
 
-  resources :shops, only: [:index, :show]
+  resources :shops, only: [:index,:new, :show]
 
   get 'likes/like', to: 'likes#like'
 
