@@ -1,0 +1,52 @@
+<div class="row">
+  <aside class="col-md-8">
+    <%= form_for [:admins, @shop] do |f| %>
+    <% @shop.errors.full_messages.each do |message| %>
+     <%= message %>
+    <% end %>
+      <div class="form-group">
+        <%= f.label :shopname, "店名" %>
+        <%= f.text_field :shopname, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content, '説明' %>
+        <%= f.text_area :content, class: 'form-control', rows: 5 %>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :category, "ジャンル" %>
+            <%= f.text_field :category, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :charge, '予算' %>
+            <%= f.number_field :charge, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :starttime, '開始時間' %>
+            <%= f.time_field :starttime, step: "3600" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :finishtime, '終了時間' %>
+            <%= f.time_field :finishtime, step: "3600" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :place, '場所' %>
+            <%= f.text_field :place, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :picture %>
+        <%= f.file_field :image, as: :file %>
+      </div>
+
+      <%= f.submit '登録する', class: 'btn btn-primary btn-inline' %>
+    <% end %>
