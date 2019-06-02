@@ -6,9 +6,7 @@ class Admins::ShopsController < Admins::ApplicationController
 
   def create
     @shop = current_admin.shops.build(shop_params)
-
-    if @shop.save
-
+    if @shop.save!
       flash[:success] = "登録しました"
       redirect_to root_url
     else

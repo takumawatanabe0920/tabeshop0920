@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks'
   }
 
-  devise_for :admins
-
   resources :users, only: [:show] do
     member do
       get :likes
@@ -20,6 +18,8 @@ Rails.application.routes.draw do
   resources :shops, only: [:index,:new, :show]
 
   get 'likes/like', to: 'likes#like'
+
+  devise_for :admins
 
   namespace :admins do
    root to: "dashboards#index"
