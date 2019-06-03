@@ -82,7 +82,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 #gem "pg", "~> 0.18"
-gem 'pg', '~> 0.19.0', group: :production
-#group :production do
-  #gem 'pg', '0.21.0'
-#end
+#gem 'pg', '~> 0.19.0', group: :production
+group :production do
+  gem 'pg', '0.21.0'
+end
