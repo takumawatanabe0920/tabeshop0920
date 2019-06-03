@@ -3,7 +3,6 @@ class ShopsController < ApplicationController
   def index
     @q = Shop.ransack(params[:q])
     @shops = @q.result(distinct: true).recent.page(params[:page])
-    @shop = Shop.all
   end
 
   def show

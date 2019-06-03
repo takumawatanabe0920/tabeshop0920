@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   resources :shops, only: [:index,:new, :show]
 
+  resources :shops do
+    resources :reviews
+  end
+
   get 'likes/like', to: 'likes#like'
 
   devise_for :admins

@@ -298,7 +298,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
-  pg (= 0.21.0)
+  pg (~> 0.18)
   pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.3)

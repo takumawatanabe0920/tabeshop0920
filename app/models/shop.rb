@@ -10,4 +10,6 @@ class Shop < ApplicationRecord
   scope :recent, -> { order(created_at: :desc)}
   has_many :favorites
   belongs_to :admin
+  has_many :reviews
+  has_many :users, through: :reviews
 end
