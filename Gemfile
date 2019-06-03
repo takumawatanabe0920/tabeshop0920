@@ -81,6 +81,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
+#gem "pg", "~> 0.18"
 group :production do
   gem 'pg', '0.21.0'
 end
