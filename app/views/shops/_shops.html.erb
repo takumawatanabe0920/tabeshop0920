@@ -9,12 +9,14 @@
         </div>
         <div class="panel-body">
           <p class="shopname"><%= link_to shop.shopname, shop_path(shop) %> <span class="text-muted">( <%= shop.starttime %> ~ <%= shop.finishtime %> )</span></p>
-
         </div>
         <div class="shopinfo">
           <p class="desc"><%= shop.place %></p>
           <p class="desc"><%= shop.category %></p>
           <p class="desc"><%= shop.charge %></p>
+        </div>
+        <div class="review-post">
+          <%= link_to "口コミ投稿", new_shop_review_path(shop) %>
         </div>
         <div>
           <% if current_admin == shop.admin %>
@@ -24,6 +26,7 @@
         <div class="star-button">
           <%= render "favorites/like_button", shop: shop %>
         </div>
+
       </div>
    </div>
   <% end %>

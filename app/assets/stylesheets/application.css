@@ -185,6 +185,10 @@ font-weight:bold;/*検索ボタンのテキスト太字*/
 font-size:16px;/*検索ボタンのフォントサイズ*/
 }
 
+#submit02:hover {
+  background-color: #33CCFF;
+}
+
 
 #submit03{
     width: 80%;
@@ -274,4 +278,25 @@ p .shopname-checkbox {
 }
 .user-profile .status ul li .status-value {
   font-size: 18px;
+}
+
+.reviews {
+
+}
+
+.reviews .reviews-user .img-circle {
+  width: 25px;
+  height: 25px;
+}
+
+.reviews .reviews-user .reviews-title a{
+  color: #000000;
+}
+.reviews .reviews-title {
+  position: absolute;
+  margin-left: 100px;
+  font-weight: bold;
+}
+.reviews-content {
+  margin-top: 20px;
 }

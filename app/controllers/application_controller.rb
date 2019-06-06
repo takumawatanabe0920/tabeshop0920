@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
     @count_likes = user.likes.count
   end
 
+  def counts2(shop)
+    @count_reviews = shop.reviews.count
+  end
+
+  def averages(shop)
+    @averages_shop_reviews = shop.reviews.average(:rate)
+  end
+
+
   protected
 
   def configure_permitted_parameters

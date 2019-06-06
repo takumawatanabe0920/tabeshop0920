@@ -7,7 +7,11 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @reviews = @shop.reviews
+    counts2(@shop)
+    averages(@shop)
   end
+
 
 
   private
