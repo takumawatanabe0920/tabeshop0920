@@ -99,8 +99,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false #この一文も追記!!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => "app135289478@heroku.com",
-                :password => "gpj4vpxt2422",
+      :user_name => "sgg50fia@kke.com",
+                :password => "Takuma0920",
       :domain => "heroku.com",
       :address => "smtp.sendgrid.net",
       :port => 587,
