@@ -8,8 +8,8 @@
         <div class="mannaka">
          <div class="panel-body">
           <p class="shopname"><%= link_to @shop.shopname, shop_path(@shop) %> <span class="text-muted">( <%= @shop.starttime %> ~ <%= @shop.finishtime %> )
-          <%= @averages_shop_reviews %>
-          <a href="#example" class="far fa-comment"><%= @count_reviews %>件のレビュー</a></span></p>
+          評価:<%= @averages_shop_reviews %>
+          <a href="#example" class="far fa-comment-dots"><%= @count_reviews %>件のレビュー</a></span></p>
          </div>
          <div class="shopinfo">
           <p class="desc">[場所:<%= @shop.place %>]  [ジャンル:<%= @shop.category %>]  [予算:<%= @shop.charge %>円 ]</p>
@@ -25,10 +25,6 @@
     </div>
    </div>
  </div>
- <div id="example">
-   <%= render "reviews/reviews", reviews: @reviews %>
- </div>
-
  <div id="example">
    <%= render "reviews/reviews", reviews: @reviews %>
  </div>

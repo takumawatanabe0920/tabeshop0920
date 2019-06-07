@@ -77,11 +77,12 @@ gem "devise"
 
 gem 'rails-i18n'
 
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
-#gem "pg", "~> 0.18"
+#gem "pg"
 #gem 'pg', '~> 0.19.0', group: :production
 group :production do
   gem 'pg', '0.21.0'

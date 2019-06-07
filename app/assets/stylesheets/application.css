@@ -281,7 +281,7 @@ p .shopname-checkbox {
 }
 
 .reviews {
-
+  margin: auto;
 }
 
 .reviews .reviews-user .img-circle {
@@ -292,11 +292,27 @@ p .shopname-checkbox {
 .reviews .reviews-user .reviews-title a{
   color: #000000;
 }
-.reviews .reviews-title {
+.reviews .reviews-star-img {
+  margin-left: -15px;
+}
+.reviews .reviews-rate {
   position: absolute;
-  margin-left: 100px;
+  margin-left: 90px;
+  font-size: 18px;
+  color: red;
   font-weight: bold;
 }
-.reviews-content {
-  margin-top: 20px;
+.reviews .reviews-title {
+
+  font-size: 15px;
+  margin: 25px 0px;
+}
+.reviews .reviews-time {
+
+  margin-top: -20px;
+  font-size: 12px;
+  font-weight: 200;
+}
+.reviews .reviews-content {
+  margin-top: 15px;
 }
