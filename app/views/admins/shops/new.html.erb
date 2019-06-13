@@ -37,8 +37,17 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :place, '場所' %>
-            <%= f.text_field :place, class: 'form-control' %>
+            <body onload="HRELoadPrefecture('prefecture', 'line', 'station');">
+             <%= f.select :place, id:"prefecture", name:"prefecture", onchange:"HREOnChangePrefecture();" do %>
+               <option value="都道府県を選択してください">都道府県を選択してください</option>
+             <% end %>
+             <%= f.select :place, id: "line", name: "line", onchange: "HREOnChangeLine();" do %>
+               <option value="路線を選択してください">路線を選択してください</option>
+             <% end %>
+             <%= f.select :place, id:"station", name:"station" do%>
+               <option value="駅を選択してください">駅を選択してください</option>
+             <% end %>
+            </body>
           </div>
         </div>
       </div>

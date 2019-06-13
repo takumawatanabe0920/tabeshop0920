@@ -30,4 +30,12 @@ Rails.application.routes.draw do
    resources :shops, only: [:new, :create, :destroy]
   end
 
+  namespace :places do
+    get 'list'
+
+  end
+
+  resources :place, :only => [ :index, :show, :create, :destroy ]
+
+  get "rankings/review", to: "rankings#review"
 end

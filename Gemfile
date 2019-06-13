@@ -77,10 +77,9 @@ gem "devise"
 
 gem 'rails-i18n'
 
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth-facebook', '~> 3.0'
+gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 
 #gem "pg"
 #gem 'pg', '~> 0.19.0', group: :production
@@ -89,3 +88,7 @@ group :production do
 end
 
 gem 'dotenv-rails'
+
+gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'autoprefixer-rails'

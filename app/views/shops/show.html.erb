@@ -8,6 +8,7 @@
         <div class="mannaka">
          <div class="panel-body">
           <p class="shopname"><%= link_to @shop.shopname, shop_path(@shop) %> <span class="text-muted">( <%= @shop.starttime %> ~ <%= @shop.finishtime %> )
+            
           評価:<%= @averages_shop_reviews %>
           <a href="#example" class="far fa-comment-dots"><%= @count_reviews %>件のレビュー</a></span></p>
          </div>
