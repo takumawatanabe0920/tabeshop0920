@@ -92,3 +92,5 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'autoprefixer-rails'
+
+gem 'jp_prefecture'

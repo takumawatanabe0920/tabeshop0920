@@ -68,6 +68,11 @@ ActiveRecord::Schema.define(version: 2019_06_10_061800) do
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
     t.string "finishtime"
     t.string "starttime"
     t.string "image"
