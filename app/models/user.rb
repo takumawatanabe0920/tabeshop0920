@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+         :confirmable, :omniauthable, :timeoutable, :Lockable, omniauth_providers: %i[facebook twitter google_oauth2]
+
 
 
   before_save { self.email.downcase! }
@@ -47,6 +48,7 @@ class User < ApplicationRecord
 
     user
   end
+
 
   private
 

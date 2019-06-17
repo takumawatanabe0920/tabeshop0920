@@ -68,11 +68,6 @@ ActiveRecord::Schema.define(version: 2019_06_10_061800) do
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "postcode"
-    t.integer "prefecture_code"
-    t.string "address_city"
-    t.string "address_street"
-    t.string "address_building"
     t.string "finishtime"
     t.string "starttime"
     t.string "image"
@@ -85,6 +80,8 @@ ActiveRecord::Schema.define(version: 2019_06_10_061800) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

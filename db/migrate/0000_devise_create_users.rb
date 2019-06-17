@@ -12,6 +12,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ## Lockable
+      t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      # t.string   :unlock_token # Only if unlock strategy is :email or :both
+      t.datetime :locked_at
+
       ## Confirmable
       t.string   :confirmation_token
       t.datetime :confirmed_at

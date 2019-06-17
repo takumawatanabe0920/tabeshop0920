@@ -13,7 +13,7 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
-
+  config.timeout_in = 30.minutes
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -296,10 +296,21 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  Dotenv.load
-  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY'],token_params: { parse: :json }
+
+
+  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY'],
+    token_params: { parse: :json },
+    provider_ignores_state: true,
+    callback_url: 'https://tabeshop.serveo.net/users/auth/facebook/callback'
+
 
 
   config.mailer_sender = '"https://tabeshop0920.herokuapp.com" <takuma_0920@i.softbank.com>'
   config.reconfirmable = true
+
+  config.lock_strategy = :failed_attempts # 一定回数ログインミスでロック
+  config.unlock_strategy = :time          # ロック解除条件は時間経過のみ
+  config.maximum_attempts = 10            # 10回連続ミスでロック
+  config.unlock_in = 1.hour               # 1時間ロック継続
+  config.last_attempt_warning = false    # あと1回ミスしてロックされる時に警告を出さない
 end

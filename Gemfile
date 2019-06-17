@@ -77,9 +77,9 @@ gem "devise"
 
 gem 'rails-i18n'
 
-gem 'omniauth', '~> 1.3', '>= 1.3.1'
-gem 'omniauth-facebook', '~> 3.0'
-gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 #gem "pg"
 #gem 'pg', '~> 0.19.0', group: :production
