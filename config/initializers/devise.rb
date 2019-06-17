@@ -299,9 +299,8 @@ Devise.setup do |config|
 
 
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY'],
-    token_params: { parse: :json },
-    provider_ignores_state: true,
-    callback_url: 'https://tabeshop.serveo.net/users/auth/facebook/callback'
+    token_params: { parse: :json }
+
 
 
 
