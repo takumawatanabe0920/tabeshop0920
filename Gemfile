@@ -42,6 +42,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bullet'
 
+
+
 end
 
 group :development do
@@ -81,6 +83,7 @@ gem 'rails-i18n'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-line'
 
 #gem "pg"
 #gem 'pg', '~> 0.19.0', group: :production
