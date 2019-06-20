@@ -95,3 +95,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
 
 gem 'jp_prefecture'
+
+gem 'thin'
+
+gem 'rails-ujs'

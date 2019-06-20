@@ -3,15 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :omniauthable, :timeoutable, :Lockable, omniauth_providers: %i[facebook twitter google_oauth2]
+         :confirmable, :omniauthable, :timeoutable, :Lockable, omniauth_providers: %i[facebook twitter]
 
 
 
-  before_save { self.email.downcase! }
-  validates :username, presence: true, length: { maximum: 50 }
-  validates :email, presence: true, length: { maximum: 255 },
-            format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
-            uniqueness: { case_sensitive: false }
+
 
   has_many :shops
   has_many :favorites
@@ -34,25 +30,24 @@ class User < ApplicationRecord
     self.likes.include?(shop)
   end
 
-  def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
+  def self.from_omniauth(auth)
+    user = User.where(email: auth.info.email).first
+    if user
+      return user
+    else
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        # userモデルが持っているカラムをそれぞれ定義していく
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0,20]
+        user.username = auth.info.username
+        user.image = auth.info.image
+        user.uid = auth.uid
+        user.provider = auth.provider
 
-    unless user
-      user = User.create(
-        uid:      auth.uid,
-        provider: auth.provider,
-        email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20]
-      )
+        # If you are using confirmable and the provider(s) you use validate emails,
+        # uncomment the line below to skip the confirmation emails.
+        user.skip_confirmation!
+      end
     end
-
-    user
-  end
-
-
-  private
-
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
   end
 end
