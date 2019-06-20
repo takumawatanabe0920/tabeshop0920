@@ -82,10 +82,6 @@ ActiveRecord::Schema.define(version: 2019_06_10_061800) do
     t.datetime "remember_created_at"
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
