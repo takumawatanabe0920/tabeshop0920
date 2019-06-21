@@ -318,3 +318,51 @@ p .shopname-checkbox {
 .reviews .reviews-content {
   margin-top: 15px;
 }
+
+.sosyal {
+  margin: 30px auto;
+
+}
+
+.facebookbutton {
+  display: block;
+  width: 40%;
+  color: white;
+  font-size: 15px;
+  background-color: #2e4a88;
+
+}
+
+.facebook-icon {
+  font-size: 20px;
+}
+
+.facebookbutton:hover {
+  color: #FFFFFF;
+  background-color: #354F84;
+}
+
+.facebookbutton:active {
+  background-color: #354F84;
+}
+
+.linebutton {
+  display: block;
+  width: 40%;
+  color: #FFFFFF;
+  font-size: 15px;
+  background-color: #00C300;
+}
+
+.line-icon {
+  font-size: 20px;
+}
+
+.linebutton:hover {
+  color: #FFFFFF;
+  background-color: #00E000;
+}
+
+.linebutton:active {
+  background-color: #00B300
+}
