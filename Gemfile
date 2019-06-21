@@ -102,3 +102,5 @@ gem 'jp_prefecture'
 gem 'thin'
 
 gem 'rails-ujs'
+
+gem 'bootstrap-social-rails'
