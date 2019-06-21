@@ -61,37 +61,6 @@
          <%= f.time_field :finishtime_lteq %>
        </div>
      </div>
-
-     <div class="panel-heading">
-       エリア検索
-     </div>
-     <div class="panel-body">
-     <p class="shopname-checkbox">
-       <%= render "shops/trainsearch" %>
-     </p>
-     </div>
-
-     <%= f.submit "検索", id: "submit03", class: "btn btn-success" %>
-  </div>
-  <input id="geoapi-postal-3" name="geoapi-postal-3" type="text" maxlength="3" />
-  <input id="geoapi-postal-4" name="geoapi-postal-4" type="text" maxlength="4" />
-  <input id="search-by-postal" name="search-by-postal" type="submit" value="検索する" />
-  <input id="geoapi-address" name="geoapi-address" type="text" />
-  
-  <div class="">
-    <body onload="HRELoadPrefecture('prefecture', 'line', 'station');">
-
-    <select id="prefecture" name="prefecture" onchange="HREOnChangePrefecture();">
-      <option value="都道府県を選択してください">都道府県を選択してください</option>
-    </select>
-      <select id="line" name="line" onchange="HREOnChangeLine();">
-    <option value="路線を選択してください">路線を選択してください</option>
-    </select>
-    <select id="station" name="station">
-      <option value="駅を選択してください">駅を選択してください</option>
-    </select>
-    </body>
   </div>
 </div>
-
 <% end %>
