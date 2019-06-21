@@ -74,7 +74,7 @@ gem 'carrierwave'
 
 gem 'ransack'
 
-gem "jquery-rails"
+
 
 gem "devise"
 
