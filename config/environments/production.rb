@@ -96,17 +96,18 @@ Rails.application.configure do
   # 静的なファイルをRailsから返す
   config.public_file_server.enabled = true
 
-
-  config.action_mailer.default_url_options = { :host => "https://tabeshop0920.herokuapp.com" }
+  host = "https://tabeshop0920.herokuapp.com"
+  config.action_mailer.default_url_options = { :host => "tabeshop0920.herokuapp.com" }
   config.action_mailer.raise_delivery_errors = false #この一文も追記!!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => "app135289478@heroku.com",
-                :password => "gpj4vpxt2422",
+      :user_name => "takumaozk0920@gmail.com",
+                :password => "bvtappuwggyksslu",
       :domain => "heroku.com",
-      :address => "smtp.sendgrid.net",
+      :address => "smtp.gmail.com",
       :port => 587,
       :authentication => :plain,
       :enable_starttls_auto => true
   }
+
 end

@@ -82,8 +82,8 @@ config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
     :enable_starttls_auto => true
   }
 
-#config.action_mailer.delivery_method = :letter_opener
-#config.action_mailer.perform_deliveries = true
+config.action_mailer.delivery_method = :letter_opener
+config.action_mailer.perform_deliveries = true
 
 
 config.web_console.whitelisted_ips = '119.245.94.171'
