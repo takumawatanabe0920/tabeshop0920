@@ -306,7 +306,7 @@ Devise.setup do |config|
 
 
 
-  config.mailer_sender = '"https://tabeshop0920.herokuapp.com" <takuma_0920@i.softbank.com>'
+  config.mailer_sender = 'takumaozk0920@gmail.com'
   config.reconfirmable = true
 
   config.lock_strategy = :failed_attempts # 一定回数ログインミスでロック
@@ -314,4 +314,13 @@ Devise.setup do |config|
   config.maximum_attempts = 10            # 10回連続ミスでロック
   config.unlock_in = 1.hour               # 1時間ロック継続
   config.last_attempt_warning = false    # あと1回ミスしてロックされる時に警告を出さない
+
+
+
+  # lock sessings
+    config.unlock_strategy = :email
+    config.maximum_attempts = 4
+
+    # timeout setting
+    config.timeout_in = 3.minutes
 end

@@ -69,10 +69,21 @@ Rails.application.configure do
   Bullet.add_footer = true
 end
 
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  # mail setting
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "takumaozk0920@gmail.com",
+    :password => "bvtappuwggyksslu",
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
-config.action_mailer.delivery_method = :letter_opener
-config.action_mailer.perform_deliveries = true
+#config.action_mailer.delivery_method = :letter_opener
+#config.action_mailer.perform_deliveries = true
 
 
 config.web_console.whitelisted_ips = '119.245.94.171'
