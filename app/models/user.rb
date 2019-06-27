@@ -61,7 +61,7 @@ end
         uid:      auth.uid,
         provider: auth.provider,
         email:    auth.info.email,
-        username:  auth.info.username,
+        name:  auth.info.username,
         password: Devise.friendly_token[0, 20],
         image:  auth.info.image
       )
