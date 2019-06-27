@@ -19,6 +19,7 @@ class User < ApplicationRecord
   access_secret = credentials['secret']
   credentials = credentials.to_json
   username = info['username']
+
   # self.set_values_by_raw_info(omniauth['extra']['raw_info'])
 end
 
@@ -52,23 +53,20 @@ end
     self.likes.include?(shop)
   end
 
-  def self.from_omniauth(auth)
-    user = User.where(email: auth.info.email).first
-    if user
-      return user
-    else
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        # userモデルが持っているカラムをそれぞれ定義していく
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0,20]
-        user.username = auth.info.username
-        user.uid = auth.uid
-        user.provider = auth.provider
+  def self.find_for_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
 
-        # If you are using confirmable and the provider(s) you use validate emails,
-        # uncomment the line below to skip the confirmation emails.
-
-      end
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        email:    auth.info.email,
+        username:  auth.info.username,
+        password: Devise.friendly_token[0, 20],
+        image:  auth.info.image
+      )
     end
+
+    user
   end
 end
