@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, :timeoutable, :Lockable, :confirmable, omniauth_providers: %i[facebook twitter line]
+         :omniauthable, :timeoutable, :Lockable, omniauth_providers: %i[facebook twitter line]
 
  has_many :social_profiles, dependent: :destroy
  def social_profile(provider)
