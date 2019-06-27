@@ -3,10 +3,12 @@
     <img src="<%= gravatar_url(@user, size: 100) %>" alt="" class="img-circle">
   </div>
   <div class="name text-center">
-    <h1><%= @user.username %></h1>
+    <h1><%= @user.name %></h1>
     <h1><%= @user.email %></h1>
+    <%= @user.image %>
+
   </div>
-  
+
   <div class="status text-center">
     <ul>
       <li>
