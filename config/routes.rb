@@ -38,4 +38,7 @@ Rails.application.routes.draw do
   resources :place, :only => [ :index, :show, :create, :destroy ]
 
   get "rankings/review", to: "rankings#review"
+
+  
+  resources :articles
 end

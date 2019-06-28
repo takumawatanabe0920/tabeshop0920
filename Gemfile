@@ -72,6 +72,11 @@ gem "kaminari"
 
 gem 'carrierwave'
 
+gem "twitter-bootstrap-rails"
+
+gem 'mini_racer'
+gem 'streamio-ffmpeg'
+
 gem 'ransack'
 
 
